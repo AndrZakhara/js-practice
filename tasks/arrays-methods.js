@@ -21,4 +21,4 @@ const arr1 = [ 1, 2, 3, 4, 5 ];
 const getSums = (arr) => arr.map(i => i).reduce((sum, current) => sum + current, 0);
 
 console.log(getSums(arr1));
-console.log(arr1);
+// console.log(arr1);
