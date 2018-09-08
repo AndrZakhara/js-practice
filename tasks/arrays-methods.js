@@ -82,3 +82,26 @@ var result = nums.some(function(num) {
 });
 
 console.log(result); // false — в массиве нет ни одного значения меньше 5
+
+const data = [{"name":"Wanda","email":"wjenkins0@irs.gov","purchases":['iPhone', 'dishwasher', 'cucumbers']},
+{"name":"Nicholas","email":"nkennedy1@ox.ac.uk","purchases":['tomatoes', 'toster', 'grill']},
+{"name":"Paula","email":"pstephens2@boston.com","purchases":['apples', 'Macbook', 'iPhone']},
+{"name":"Fred","email":"fpeterson3@reuters.com","purchases":['beef', 'pork', 'cheese']},
+{"name":"Andrew","email":"awagner4@weebly.com","purchases":['cottage cheese', 'cream', 'candies']},
+{"name":"Steven","email":"sgonzales5@mashable.com","purchases":['iMac', 'Android phone', 'Windows 10']},
+{"name":"Harry","email":"hallen6@nasa.gov","purchases":['green grape', 'tomatoes', 'potatoes']},
+{"name":"Bonnie","email":"breyes7@kickstarter.com","purchases":['Windows 10', 'dishwasher', 'grill']},
+{"name":"Lisa","email":"lgreene8@spotify.com","purchases":['pork', 'iMac', 'cheese']},
+{"name":"Wayne","email":"wramos9@yahoo.com","purchases":['apples', 'cream', 'candies']}];
+// Получили данные с сервера и записали их в переменную data
+var customers = data.filter(function(customer) {
+    return customer.purchases.some(function(purchase) {
+      return purchase === 'iPhone' || purchase === 'Macbook' || purchase === 'iMac';
+    });
+  });
+  
+  console.log(customers);
+  // [{"name":"Wanda","email":"wjenkins0@irs.gov","purchases":["iPhone","dishwasher","cucumbers"]},
+  // {"name":"Paula","email":"pstephens2@boston.com","purchases":["apples","Macbook","iPhone"]},
+  // {"name":"Steven","email":"sgonzales5@mashable.com","purchases":["iMac","Android phone","Windows 10"]},
+  // {"name":"Lisa","email":"lgreene8@spotify.com","purchases":["pork","iMac","cheese"]}]
