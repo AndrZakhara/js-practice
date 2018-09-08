@@ -99,9 +99,53 @@ var customers = data.filter(function(customer) {
       return purchase === 'iPhone' || purchase === 'Macbook' || purchase === 'iMac';
     });
   });
-  
+  console.log(data);
   console.log(customers);
   // [{"name":"Wanda","email":"wjenkins0@irs.gov","purchases":["iPhone","dishwasher","cucumbers"]},
   // {"name":"Paula","email":"pstephens2@boston.com","purchases":["apples","Macbook","iPhone"]},
   // {"name":"Steven","email":"sgonzales5@mashable.com","purchases":["iMac","Android phone","Windows 10"]},
   // {"name":"Lisa","email":"lgreene8@spotify.com","purchases":["pork","iMac","cheese"]}]
+
+  var monday = [
+    {
+        'name'     : 'Write a tutorial',
+        'duration' : 180
+    },
+    {
+        'name'     : 'Some web development',
+        'duration' : 120
+    }
+];
+
+var tuesday = [
+    {
+        'name'     : 'Keep writing that tutorial',
+        'duration' : 240
+    },
+    {
+        'name'     : 'Some more web development',
+        'duration' : 180
+    },
+    {
+        'name'     : 'A whole lot of nothing',
+        'duration'  : 240
+    }
+];
+ 
+var tasks = [monday, tuesday];
+
+var result = tasks.reduce((acc, current) => acc.concat(current))
+                  // Extract the task duration, and convert minutes to hours
+                  .map((task) => task.duration / 60)
+                  // Filter out any task that took less than two hours
+                  .filter((duration) => duration >= 2)
+                  // Multiply each tasks' duration by our hourly rate
+                  .map((duration) => duration * 25)
+                  // Combine the sums into a single dollar amount
+                  .reduce((acc, current) => [(+acc) + (+current)])
+                  // Convert to a "pretty-printed" dollar amount
+                  .map((amount) => '$' + amount.toFixed(2))
+                  // Pull out the only element of the array we got from map
+                  .reduce((formatted_amount) =>formatted_amount);
+
+  
