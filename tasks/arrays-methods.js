@@ -55,3 +55,30 @@ johnDoe.mumble(['Hello, World!', 'JS is great', 'I\'m designer and i have a good
 
 // console.log(filterItems('ap')); 
 // console.log(filterItems('an')); 
+var fives = [5, 5, 5, 6, 5, 5];
+var result = fives.every(function(five) {
+  return five === 5;
+});
+
+console.log(result); // false — в массиве же есть шестёрка
+
+var fives = [5, 5, 5, 5, 5, 5];
+var result = fives.every(function(five) {
+  return five === 5;
+});
+
+console.log(result); // true — теперь там только пятёрки, всё хорошо
+
+var nums = [1, 2, 3, 4, 5];
+var result = nums.some(function(num) {
+  return num > 3;
+});
+
+console.log(result); // true — в массиве есть хотя бы одно значение больше 3
+
+var nums = [10, 20, 30, 40, 50];
+var result = nums.some(function(num) {
+  return num < 5;
+});
+
+console.log(result); // false — в массиве нет ни одного значения меньше 5
