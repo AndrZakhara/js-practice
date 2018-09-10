@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+    <head>
+        <title>Game of Life</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="output">
+            <div id="out"></div>
+            <canvas id="out2" width="200" height="200" onclick="input(event);" 
+                    onmouseup="down = 0;" onmousedown="down = 1;" 
+                    onmousemove="if (down == 1) input(event);"></canvas>
+            <div id="iterations"></div>
+        </div>
+
+        <fieldset class='controls'>
+            <legend>Controls</legend> 
+            <p>Click or Drag to draw pattern, use Shift to undo.</p>
+            <input id="start" type="button" value="Start" onclick="start();" />
+            <input id="pause" type="button" value="Pause" onclick="pause();" />
+            <input id="reset" type="button" value="Reset" onclick="reset();" />
+        </fieldset>
+
+        <fieldset class='settings'> 
+            <legend>Settings</legend> 
+            <form> 
+                <label for="width">Game Area Width (cells):</label> 
+                <input type="range" id="width" name="width" min="1" max="300" step="1" value="30" onmousemove="update(this.value, 'lwidth')"> 
+                <output for="width" id="lwidth">30</output> 
+            </form> 
+            <form> 
+                <label for="height">Game Area Height (cells):</label> 
+                <input type="range" id="height" name="height" min="1" max="300" step="1" value="20" onmousemove="update(this.value, 'lheight')"> 
+                <output for="height" id="lheight">20</output> 
+            </form> 
+            <form> 
+                <label for="cellHeight">Cell Height (px):</label> 
+                <input type="range" id="cellHeight" name="cellHeight" min="1" max="50" step="1" value="20" onmousemove="update(this.value, 'lcellHeight')"> 
+                <output for="cellHeight" id="lcellHeight">20</output>
+            </form> 
+            <form> 
+                <label for="speed">Update speed (ms):</label> 
+                <input type="range" name="speed" id="speed" min="10" max="5000" step="10" value="500" onmousemove="update(this.value, 'lspeed')"> 
+                <output for="speed" id="lspeed">500</output> 
+            </form> 
+            <input type="submit" value="Apply & Reset" onclick="loadSettings();"> 
+        </fieldset>
+
+        <script type="text/javascript">
+          function update(value, id) {
+            document.getElementById(id).innerHTML = value; 
+          }
+        </script>
+        <script type="text/javascript" src="gameLogic.js"></script>
+        <script type="text/javascript" src="control.js"></script>
+    </body>
+</html>
