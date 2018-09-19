@@ -1,28 +1,17 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-// var app = require('express')();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-// var users = [];
-// var connections = [];
-
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 app.use(express.static("public"));
-// app.get('/', function(req, res) {
-//     res.sendFile(__dirname + '/index.html');
-
-// });
-
-// app.get('/style.css', function(req, res) {
-//     res.sendFile(__dirname + '/styles.css');
-// });
-
 
 io.on('connection', function(socket) {
     console.log('user connected');
+
     socket.on('chat message', function(msg) {
         console.log('message: ' + msg);
+        io.emit('chat message', msg);
     });
 
     socket.on('disconnect', function() {
