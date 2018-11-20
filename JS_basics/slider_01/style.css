@@ -1,0 +1,39 @@
+body, ul, li {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #424b54;
+    color: white;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 100vh;
+}
+ img {
+     max-width: 100%;
+     display: none;
+ }
+ .show-img {
+     display: block;
+ }
+ #gallery {
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ #slider img {
+     border-radius: 3px;
+ }
+ #slider-nav {
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+#slider-nav > button{
+    width: 80px;
+    margin: 0 5px 0 5px;
+    color: #575757;
+    height: 25px;
+}
