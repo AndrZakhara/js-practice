@@ -30,8 +30,10 @@ body {
      display: flex;
      align-items: center;
      justify-content: center;
+     overflow: hidden;
+     flex-shrink: 0;
  }
-#slider-nav > button{
+#slider-nav > input {
     width: 80px;
     margin: 0 5px 0 5px;
     color: #575757;
