@@ -1,0 +1,36 @@
+body, ul, li {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #424b54;
+    color: white;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100vh;
+    box-sizing: border-box;
+}
+#items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: inherit;
+}
+.item {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    color: #424b54;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-sizing: border-box;
+}
+.item:hover {
+    cursor: pointer;
+}
+.selected {
+    border: 2px solid red;
+}
