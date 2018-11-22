@@ -3,7 +3,7 @@ const btnGallery = document.querySelectorAll('#slider-nav > input');
 
 let i = 0;
 
-function btnOnclick () {
+function btnClick () {
   const btnType = this.getAttribute('data-value');
 
   if (btnType === 'left') {
@@ -35,7 +35,7 @@ function btnOnclick () {
 }
 
 btnGallery.forEach((elem) => {
-  elem.onclick = btnOnclick;
+  elem.onclick = btnClick;
 });
 
 
